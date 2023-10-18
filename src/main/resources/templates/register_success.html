@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Registration Success</title>
+</head>
+<body>
+<div align="center">
+    <div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
+        <div class="flex justify-center md:justify-end -mt-16">
+            <img class="w-20 h-20 object-cover rounded-full border-2 border-indigo-500" src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80">
+        </div>
+        <div>
+            <br>
+            <h2 class="text-gray-800 text-3xl font-semibold">Registration Succeeded!</h2>
+            <p class="mt-2 text-gray-600">The next step it is complete your data for create invoices</p>
+            <br>
+            <span th:text="${AppUser.getIdUser()}"></span>
+            <br>
+            <span th:text="${AppUser.getUserUUID()}"></span>
+        </div>
+        <div class="flex justify-end mt-4">
+            <a href="/myself" class="text-xl font-medium text-indigo-500">Go ahead</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
