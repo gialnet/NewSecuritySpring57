@@ -5,8 +5,6 @@ import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-
-
 @Slf4j
 @Component
 public class ShouldAuthenticateAgainstThirdPartySystem {
@@ -19,6 +17,12 @@ public class ShouldAuthenticateAgainstThirdPartySystem {
         this.httpSession = httpSession;
     }
 
+    /**
+     * Use a Rocks db service to check the user and password
+     * @param name user name
+     * @param password user password
+     * @return user is authorized or not
+     */
     public boolean AuthenticateAgainstThirdPartySystem(String name, String password){
 
         boolean user_auth = servicesUsers.UserAuthByUserAndPassword(name, password);

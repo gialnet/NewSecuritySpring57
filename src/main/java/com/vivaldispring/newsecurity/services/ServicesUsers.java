@@ -44,8 +44,6 @@ public class ServicesUsers {
         repository.save("sequence.customer." + appUser.getIdUser().toLowerCase(), 0);
         repository.save("sequence.invoice." +  appUser.getIdUser().toLowerCase(), 0);
 
-        // Write Lucene Index only for internal purpose use
-        // luceneWriteRepository.WriteAppUserDocument(appUser);
 
         // save IdUser usually email address antonio@gmial.com
         return repository.save(appUser.getIdUser().toLowerCase(), gson.toJson(appUser));
@@ -53,9 +51,9 @@ public class ServicesUsers {
     }
 
     /**
-     *
-     * @param KeyToFind
-     * @return
+     * Get an user by key
+     * @param KeyToFind the key to find
+     * @return the register in the db
      */
     public Optional<Object> FindKey(String KeyToFind){
 
@@ -65,7 +63,7 @@ public class ServicesUsers {
 
     /**
      * Search for an user
-     * @param IdUser
+     * @param IdUser user id
      */
     public Optional<Object> FindUser(String IdUser){
 
@@ -77,10 +75,10 @@ public class ServicesUsers {
         return this.appUser;
     }
     /**
-     *
-     * @param user
-     * @param password
-     * @return
+     * The process to check if exist
+     * @param user user name
+     * @param password password
+     * @return boolean value
      */
     public boolean UserAuthByUserAndPassword(String user, String password){
 

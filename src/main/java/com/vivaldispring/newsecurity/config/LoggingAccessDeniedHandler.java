@@ -17,7 +17,6 @@ import java.io.IOException;
 @Component
 public class LoggingAccessDeniedHandler implements AccessDeniedHandler {
 
-
     @Override
     public void handle(HttpServletRequest request,
                        HttpServletResponse response,
